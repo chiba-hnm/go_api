@@ -1,0 +1,13 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }}
+   <h2>作成</h2>
+    <form method="POST" action="insert">
+      <label> Id  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </label><input type="text" name="Id" style="width:200px;" placeholder="※Idは後から変更できません"/><br />
+      <label> Name  &nbsp;  </label><input type="text" name="Name" style="width:200px;" /><br />
+      <label> Age  &nbsp;&nbsp;&nbsp;&nbsp;  </label><input type="text" name="Age" style="width:200px;" placeholder="※半角数字のみ"/><br />
+      <label> Email  &nbsp;&nbsp;  </label><input type="text" name="Email" style="width:200px;" /><br />
+      <input type="submit" value="作成" style="background-color:'gray'" onmouseover="this.style.background='dimgray'" onmouseout="this.style.background='white'" onclick="alert('作成しました')" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

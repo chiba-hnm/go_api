@@ -1,0 +1,9 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2>{{ .Id }}の取得</h2>
+      <p>Name: {{ .Name }}</p>
+      <p>Age: {{ .Age }}</p>
+      <p>Email:  {{ .Email }}</p><br /> <a href="/edit?Id={{ .Id }}">編集</a></p>
+  {{ template "Footer" }}
+{{ end }}

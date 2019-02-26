@@ -1,0 +1,13 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }}
+   <h2>{{ .Id }}の編集</h2>
+    <form method="POST" action="update">
+      <input type="hidden" name="uid" value="{{ .Id }}" />
+      <label> Name  &nbsp;  </label><input type="text" name="Name" style="width:200px;" value="{{ .Name }}"  /><br />
+      <label> Age  &nbsp;&nbsp;&nbsp;&nbsp;  </label><input type="text" name="Age" style="width:200px;" value="{{ .Age }}" placeholder="※半角数字のみ" /><br />
+      <label> Email  &nbsp;&nbsp;  </label><input type="text" name="Email" style="width:200px;" value="{{ .Email }}"  /><br />
+      <input type="submit" value="編集" style="background-color:'gray'" onmouseover="this.style.background='dimgray'" onmouseout="this.style.background='white'" onclick="alert('更新しました')" />
+    </form><br />
+  {{ template "Footer" }}
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> 一覧 </h2>
+    <table border="0" cellspacing="1" cellpadding="5" bgcolor="black">
+      <thead>
+      <tr bgcolor="gray" align="center">
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Email</td>
+        <td>取得</td>
+        <td>編集</td>
+        <td>削除</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr bgcolor="white">
+        <td>{{ .Id }}</td>
+        <td>{{ .Name }} </td>
+        <td>{{ .Age }} </td>
+        <td>{{ .Email }} </td>
+        <td><a href="/show?Id={{ .Id }}">取得</a></td>
+        <td><a href="/edit?Id={{ .Id }}">編集</a></td>
+        <td><a href="/delete?Id={{ .Id }}">削除</a></td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}
